@@ -1,0 +1,58 @@
+.fr_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 2rem 6rem;
+}
+
+.fr_navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.fr_navbar-links_logo {
+  margin-right: 2rem;
+}
+
+.fr_navbar-links_logo img {
+  height: 50px;
+}
+
+.fr_navbar-links_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.fr_navbar-sign {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fr_navbar-links_container p,
+.fr_navbar-sign p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.fr_navbar-sign button {
+  padding: 0.5rem 1rem;
+  background: #edecff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

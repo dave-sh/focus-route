@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f9ff;
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+.header_bg {
+  background-color: white;
+  
+}
