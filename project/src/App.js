@@ -1,11 +1,12 @@
 import React from 'react'
 import './app.css'
 
-import {Content, Header, Navbar} from './containers';
+import {Content, Navbar} from './containers';
+import { Dashboard, Day, Planner, Setting, Sign_In, Sign_Up } from './pages';
 
 const App = () => {
   return (
-    <div className="page">
+    <div className="app">
       <div className="header_bg">
         <Navbar /> 
       </div>
