@@ -1,6 +1,7 @@
 import React from 'react'
 import './navbar.css'
 import logo from '../../assets/Logo.PNG'
+import { Routes, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -10,16 +11,16 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className="fr_navbar-links_container">
-          <p><a href='#home'>Home</a></p>
-          <p><a href='#home'>Planner</a></p>  
-          <p><a href='#home'>Day</a></p>  
-          <p><a href='#home'>Timer</a></p>  
-          <p><a href='#home'>Setting</a></p>    
+          <p><Link to ="/">Home </Link></p>
+          <p><Link to ="/day">Day </Link></p>  
+          <p><Link to ="/planner">Planner</Link></p>  
+          <p><Link to ="/timer">Timer</Link></p>  
+          <p><Link to ="/setting">Setting</Link></p>    
         </div>  
       </div>
       <div className="fr_navbar-sign">
-        <p><a href='#sign-in'>Sign in</a></p>
-        <button type="#sign-up"><a href='#sign-in'>Sign up</a></button>
+        <p><Link to ="/sign_in">Sign In</Link></p>
+        <button type="#sign-up"><Link to ="/sign_up">Sign Up</Link></button>
       </div>
     </div>
   )
