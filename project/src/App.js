@@ -4,6 +4,7 @@ import './app.css'
 import {Content, Navbar} from './containers';
 import { Dashboard, Day, Planner, Setting, Sign_In, Sign_Up } from './pages';
 import {Routes, Route, Link} from "react-router-dom"
+import { Date } from './components';
 
 const App = () => {
   return (
