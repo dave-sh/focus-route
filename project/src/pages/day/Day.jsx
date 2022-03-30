@@ -15,7 +15,13 @@ function Day() {
   return (
   	
     <div className="day">           
-       <h1 className='day_date'>{day}, {month} {date}</h1>
+       {/*<h1 className='day_date'>{day}, {month} {date}</h1> */}
+       <div className="day_comp">
+          <h1 className='day_comp_title'>Task Completed</h1>
+       </div>
+       <div className='day_cont'>
+         <h1>Hello</h1>
+       </div>
      </div>
   
   );
