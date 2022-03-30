@@ -15,12 +15,19 @@ function Day() {
   return (
   	
     <div className="day">           
-       {/*<h1 className='day_date'>{day}, {month} {date}</h1> */}
        <div className="day_comp">
           <h1 className='day_comp_title'>Task Completed</h1>
        </div>
        <div className='day_cont'>
-         <h1>Hello</h1>
+         <div className='day_cont_top'>
+        <h1 className='day_date'>{day}, {month} {date}</h1> 
+         </div>
+         <div className='day_cont_add'>
+          <input type="text" placeholder='Add a Task'/>
+         </div>
+         <div className='day_cont_task'>
+
+         </div>
        </div>
      </div>
   
