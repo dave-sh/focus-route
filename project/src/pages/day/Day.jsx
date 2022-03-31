@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './day.css';
 
 
 function Day() {
-
-   const d = new Date()
+    let myTasks = []
+    const d = new Date()
     const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
     const day = weekDay[d.getDay()]
     const month = months[d.getMonth()]
     const date = d.getDate()
+
+    const [taskList, setTaskList] = useState([])
+
+   function addTask(e){
+     e.preventDefault()
+    setTaskList([...taskList, {task: e.target.task_.value}])
+    e.target.task_.value =""
+    console.log(myTasks)
+   }
+    
  
 
   return (
@@ -23,11 +33,23 @@ function Day() {
         <h1 className='day_date'>{day}, {month} {date}</h1> 
          </div>
          <div className='day_cont_add'>
-          <input type="text" placeholder='Add a Task'/>
-         </div>
-         <div className='day_cont_task'>
+           <form  className='day_cont_add_form' onSubmit={addTask}>
+             <input 
+              type="text" 
+              placeholder='Add a Task' 
+              className='input-el'
+              name='task_'
+              />
+           </form>
 
          </div>
+         <div className='day_cont_task'>
+    {taskList.map((singleTask,index) =>(
+         <div key={index} className='tasks'>
+           
+         </div> 
+    ))}
+        </div> 
        </div>
      </div>
   

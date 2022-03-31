@@ -4,6 +4,10 @@ import './sign_in.css'
 import {  Link } from "react-router-dom";
 
 const Sign_In = () => {
+
+
+
+
   return (
     <div className='sign_in'>
       <div className ='sign_in_form'>
@@ -13,7 +17,7 @@ const Sign_In = () => {
         <input type="password" placeholder='Password' />
       
       <p><a href="#">Forgot Password?</a></p>
-      <button className='sign_in_button 'type='submit'>Login</button>
+      <button className='sign_in_button 'type='submit' >Login</button>
       <p>Dont have an Account?
         <Link to = '/sign_up'className="sign_in_form_sign_up" > sign up</Link>
       </p>
