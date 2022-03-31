@@ -44,9 +44,11 @@ function Day() {
 
          </div>
          <div className='day_cont_task'>
-    {taskList.map((singleTask,index) =>(
+    {taskList.map((singleTask, index) =>(
          <div key={index} className='tasks'>
-           
+          <p className='tasks_name' key={index}>
+            {singleTask.task}  
+          </p>   
          </div> 
     ))}
         </div> 
