@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {AiOutlinePlus, AiOutlineCheck, AiOutlineClose} from 'react-icons/ai'
 import './day.css';
 
 
@@ -17,7 +18,13 @@ function Day() {
      e.preventDefault()
     setTaskList([...taskList, {task: e.target.task_.value}])
     e.target.task_.value =""
-    console.log(myTasks)
+    
+   }
+
+   function removeTask(index) {
+    const list = [...taskList];
+    list.splice(index, 1);
+    setTaskList(list);
    }
     
  
@@ -34,6 +41,7 @@ function Day() {
          </div>
          <div className='day_cont_add'>
            <form  className='day_cont_add_form' onSubmit={addTask}>
+             <button className='day_cont_add_form_btn'><AiOutlinePlus/></button>
              <input 
               type="text" 
               placeholder='Add a Task' 
@@ -48,7 +56,9 @@ function Day() {
          <div key={index} className='tasks'>
           <p className='tasks_name' key={index}>
             {singleTask.task}  
-          </p>   
+          </p> 
+          <button className='tasks_btn'><AiOutlineCheck size='1.5em' color='green'/></button>  
+          <button className='tasks_btn' onClick={removeTask}><AiOutlineClose size='1.5em' color='red'/></button>  
          </div> 
     ))}
         </div> 
