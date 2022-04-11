@@ -1,9 +1,9 @@
 import React from 'react'
-import './sign_up.css'
+import './signUp.css'
 
 import {  Link } from "react-router-dom";
 
-const Sign_Up = () => {
+const SignUp = () => {
   return (
     <div className='sign_up'>
       <div className ='sign_up_form'>
@@ -25,4 +25,4 @@ const Sign_Up = () => {
   )
 }
 
-export default Sign_Up
+export default SignUp

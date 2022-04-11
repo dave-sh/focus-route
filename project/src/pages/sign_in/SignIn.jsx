@@ -1,9 +1,9 @@
 import React from 'react'
-import './sign_in.css'
+import './signIn.css'
 
 import {  Link } from "react-router-dom";
 
-const Sign_In = () => {
+const SignIn = () => {
 
 
 
@@ -28,4 +28,4 @@ const Sign_In = () => {
   )
 }
 
-export default Sign_In
+export default SignIn
