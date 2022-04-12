@@ -1,9 +1,12 @@
 import React from 'react'
 import './planner.css'
+import { Navbar} from "../../containers"
 
 const Planner = () => {
   return (
-    <div className='planner'>Planner</div>
+    <div className='page'>
+      <Navbar />
+      </div>
   )
 }
 

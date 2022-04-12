@@ -46,7 +46,7 @@
 }
 
 .fr_navbar-sign button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.5rem;
   background: #edecff;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -56,4 +56,8 @@
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+.logOut {
+  
 }

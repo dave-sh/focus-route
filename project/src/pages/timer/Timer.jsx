@@ -1,9 +1,12 @@
 import React from 'react'
 import './timer.css'
+import { Navbar} from "../../containers"
 
 const Timer = () => {
-  return (
-    <div className='timer'>Timer</div>
+   return (
+    <div>
+      <Navbar />
+    </div>
   )
 }
 

@@ -1,9 +1,12 @@
 import React from 'react'
 import './setting.css'
+import { Navbar} from "../../containers"
 
 const Setting = () => {
   return (
-    <div className='setting'>Setting</div>
+    <div>
+      <Navbar />
+    </div>
   )
 }
 

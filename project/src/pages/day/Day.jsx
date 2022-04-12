@@ -1,57 +1,42 @@
 import React, {useState, useEffect} from 'react';
 import {AiOutlinePlus, AiOutlineCheck, AiOutlineClose} from 'react-icons/ai';
-
+import {collection, getDocs, } from "firebase/firestore";
 import db from '../../firebase';
-import {collection, addDoc, doc, onSnapshot, getDoc} from "firebase/firestore";
 import './day.css';
+import { Navbar} from "../../containers"
 
 
  function Day() {
     
     const d = new Date()
     const weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    const day = weekDay[d.getDay()]
-    const month = months[d.getMonth()]
-    const date = d.getDate()
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const day = weekDay[d.getDay()];
+    const month = months[d.getMonth()];
+    const date = d.getDate();
 
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState('');
 
-  
-  
     
     
     const addTask = (event) => {
       event.preventDefault();
       setTasks([...tasks, input])
-      const docRef = addDoc(collection(db, "tasks"), {
-        task: input,
         
-      });
+      
       
       setInput('');
 
-      docRef = db.collection("tasks").doc("SF");
-
-docRef.get().then((doc) => {
-    if (doc.exists) {
-        console.log("Document data:", doc.data());
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch((error) => {
-    console.log("Error getting document:", error);
-});
     }
 
     
 
 
   return (
-  	
-    <div className="day">           
+    <div className='page'>
+      <Navbar />
+      <div className="day">          
        <div className="day_comp">
           <h1 className='day_comp_title'>Task Completed</h1>
        </div>
@@ -85,6 +70,7 @@ docRef.get().then((doc) => {
         </div> 
        </div>
      </div>
+    </div>
   
   );
 }
