@@ -1,49 +1,43 @@
-import React from 'react';
-import { useCountdown } from './hooks/useCountdowns';
-import TimeDisplay from './TimeDisplay'
+import React, { useState, useEffect } from "react";
 
-const TimerFinishedNotice = () => {
+export default function CountDownTimer() {
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
+  const [displayMessage, setDisplayMessage] = useState(false);
+
+  useEffect(() => {
+    let interval = setInterval(() => {
+      clearInterval(interval);
+
+      if (seconds === 0) {
+        if (minutes !== 0) {
+          setSeconds(59);
+          setMinutes(minutes - 1);
+        } else {
+          let minutes = displayMessage ? 24 : 4;
+          let seconds = 59;
+
+          setSeconds(seconds);
+          setMinutes(minutes);
+          setDisplayMessage(!displayMessage);
+        }
+      } else {
+        setSeconds(seconds - 1);
+      }
+    }, 1000);
+  }, [seconds]);
+
+  const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  const timerSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
   return (
-    <div className="expired-notice">
-      <span>Done!</span>
-      <p>Please select a future date and time.</p>
+    <div className="countdowntimer">
+      <div className="message">
+        {displayMessage && <div>Time for a break! New session begins in:</div>}
+      </div>
+      <div className="timer">
+        {timerMinutes}:{timerSeconds}
+      </div>
     </div>
   );
-};
-
-const ShowCounter = ({ minutes, seconds }) => {
-  return (
-    <div className="show-counter">
-      <a
-        href="https://tapasadhikary.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="countdown-link"
-      >
-        <p>:</p>
-        <TimeDisplay value={minutes} type={'Mins'} isDanger={false} />
-        <p>:</p>
-        <TimeDisplay value={seconds} type={'Seconds'} isDanger={false} />
-      </a>
-    </div>
-  );
-};
-
-const CountDownTimer = ({ targetDate }) => {
-  const [days, hours, minutes, seconds] = useCountdown(targetDate);
-
-  if (days + hours + minutes + seconds <= 0) {
-    return <TimerFinishedNotice />;
-  } else {
-    return (
-      <ShowCounter
-        days={days}
-        hours={hours}
-        minutes={minutes}
-        seconds={seconds}
-      />
-    );
-  }
-};
-
-export default CountDownTimer
+}
