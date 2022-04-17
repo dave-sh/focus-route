@@ -56,3 +56,20 @@
     font-size: 0.75rem;
     line-height: 1rem;
   }
+
+  .countdowntimer {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    color: black;
+    height: 100px;
+    width: 100%;
+    font-size: 2.5em;
+  }
+  .restmessage{
+    align-items: center;
+    align-content: center;
+    height: 110px;
+    font-size: .6em;
+  }
+  

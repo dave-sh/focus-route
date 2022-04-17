@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function CountDownTimer() {
-  const [minutes, setMinutes] = useState(25);
+  const [minutes, setMinutes] = useState(10);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
 
@@ -14,7 +14,7 @@ export default function CountDownTimer() {
           setSeconds(59);
           setMinutes(minutes - 1);
         } else {
-          let minutes = displayMessage ? 24 : 4;
+          let minutes = displayMessage ? 9 : 4;
           let seconds = 59;
 
           setSeconds(seconds);
@@ -32,7 +32,7 @@ export default function CountDownTimer() {
 
   return (
     <div className="countdowntimer">
-      <div className="message">
+      <div className="restmessage">
         {displayMessage && <div>Time for a break! New session begins in:</div>}
       </div>
       <div className="timer">
