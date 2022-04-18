@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 export default function CountDownTimer() {
-  const [minutes, setMinutes] = useState(10);
+  const [minutes, setMinutes] = useState(30);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
   const [displayMessage1, setDisplayMessage1] = useState(true);
@@ -16,7 +16,7 @@ export default function CountDownTimer() {
           setMinutes(minutes - 1);
           
         } else {
-          let minutes = displayMessage ? 9 : 4;
+          let minutes = displayMessage ? 29 : 4;
           let seconds = 59;
 
           setSeconds(seconds);
