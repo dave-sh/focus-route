@@ -1,14 +1,19 @@
-orbs: # declare what orbs we are going to use
-  node: circleci/node@2.0.2 # the Node orb provides common Node-related configuration
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+  heroku: circleci/heroku@1.2.6
 
-version: 2.1 # using 2.1 provides access to orbs and other features
-
-workflows:
-  matrix-tests:
-    jobs:
-      - node/test:
-          version: 13.11.0
-      - node/test:
-          version: 12.16.0
-      - node/test:
-          version: 10.19.0
+jobs:
+  build_and_test:
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm test
+          name: Run tests
+      - run:
+          command: npm build
+          name: Build app
