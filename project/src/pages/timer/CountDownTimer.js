@@ -4,6 +4,7 @@ export default function CountDownTimer() {
   const [minutes, setMinutes] = useState(10);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
+  const [displayMessage1, setDisplayMessage1] = useState(true);
 
   useEffect(() => {
     let interval = setInterval(() => {
@@ -13,6 +14,7 @@ export default function CountDownTimer() {
         if (minutes !== 0) {
           setSeconds(59);
           setMinutes(minutes - 1);
+          
         } else {
           let minutes = displayMessage ? 9 : 4;
           let seconds = 59;
@@ -20,6 +22,7 @@ export default function CountDownTimer() {
           setSeconds(seconds);
           setMinutes(minutes);
           setDisplayMessage(!displayMessage);
+          setDisplayMessage1(!displayMessage1);
         }
       } else {
         setSeconds(seconds - 1);
@@ -32,6 +35,7 @@ export default function CountDownTimer() {
 
   return (
     <div className="countdowntimer">
+      {displayMessage1 && <div>Study time! Break begins in:</div>}
       <div className="restmessage">
         {displayMessage && <div>Time for a break! New session begins in:</div>}
       </div>
