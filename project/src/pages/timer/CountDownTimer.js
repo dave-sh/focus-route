@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 export default function CountDownTimer() {
+
   //This sets the time in minutes and seconds
   //use a flag to set initial time to input fields, then start the timer
   const [minutes, setMinutes] = useState("1");
   const [seconds, setSeconds] = useState("30");
   const [displayMessage, setDisplayMessage] = useState(false);
+  const [displayMessage1, setDisplayMessage1] = useState(true);
 
   const [startFlag, setStartFlag] = useState(false);
 
@@ -28,6 +30,7 @@ export default function CountDownTimer() {
       let interval = setInterval(() => {
         clearInterval(interval);
 
+
         if (seconds === 0) {
           if (minutes !== 0) {
             setSeconds(59);
@@ -42,6 +45,7 @@ export default function CountDownTimer() {
           }
         } else {
           setSeconds(seconds - 1);
+
         }
       }, 1000);
     }
@@ -54,6 +58,7 @@ export default function CountDownTimer() {
 
   //ui components
   return (
+
     <div className="page">
       <div className="countdowntimer">
         <div className="restmessage">
@@ -85,6 +90,7 @@ export default function CountDownTimer() {
             />
           </label>
         </form>
+
       </div>
       <div className="buttons">
         <div className="startButton">
