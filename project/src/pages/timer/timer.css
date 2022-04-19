@@ -57,6 +57,15 @@
     line-height: 1rem;
   }
 
+  .startButton {
+    margin-left: 20px;
+    margin-right: 20px;
+    border: none;
+    background-color: lightgray;
+    cursor: pointer;
+    
+  }
+
   .countdowntimer {
     display: flex;
     align-items: center;
