@@ -4,7 +4,7 @@ export default function CountDownTimer() {
   //This sets the time in minutes and seconds
   //use a flag to set initial time to input fields, then start the timer
   const [minutes, setMinutes] = useState("1");
-  const [seconds, setSeconds] = useState("0");
+  const [seconds, setSeconds] = useState("30");
   const [displayMessage, setDisplayMessage] = useState(false);
 
   const [startFlag, setStartFlag] = useState(false);
