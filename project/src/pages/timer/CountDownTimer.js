@@ -4,16 +4,10 @@ export default function CountDownTimer() {
   //This sets the time in minutes and seconds
   //use a flag to set initial time to input fields, then start the timer
   const [minutes, setMinutes] = useState("1");
-  const [seconds, setSeconds] = useState("1");
+  const [seconds, setSeconds] = useState("0");
   const [displayMessage, setDisplayMessage] = useState(false);
 
   const [startFlag, setStartFlag] = useState(false);
-
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    //setInputs(values => ({...values, [name]: value}))
-  }
 
   const startTimer = (event) => {
     setStartFlag(true);
@@ -39,11 +33,6 @@ export default function CountDownTimer() {
             setSeconds(59);
             setMinutes(minutes - 1);
           } else {
-            let minutes = displayMessage ? 9 : 4;
-            let seconds = 59;
-
-            //setSeconds(seconds);
-            //setMinutes(minutes);
             setDisplayMessage(!displayMessage);
           }
         } else {
