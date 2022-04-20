@@ -13,6 +13,8 @@ react-icons
 
 firebase database
 
+CSS Bootstrap
+
 To run web app, cd into project folder and type npm start from bash or vscode terminal
 
 Will run on localhost port 3000
