@@ -2,7 +2,7 @@
 Repository for our Virtual Planner project for CEN3031
 
 necessary dependencies(npm required): 
-
+```
 React
 
 React-dom
@@ -14,7 +14,9 @@ react-icons
 firebase database
 
 CSS Bootstrap
+```
 
+##Usage
 To run web app, cd into project folder and type npm start from bash or vscode terminal
 
 Will run on localhost port 3000
