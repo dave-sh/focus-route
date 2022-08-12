@@ -1,5 +1,5 @@
 # Focus Route
-Repository for our Virtual Planner project for CEN3031
+Repository for our Virtual Planner project for CEN3031. Made in collaboration with Yosef Melul and Steven Cabral. 
 
 necessary dependencies(npm required): 
 ```
